@@ -51,7 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 4em 0;
+  padding: 4em 0 0.5em 0;
   background: $very-pale-blue;
   background-image: url(./images/bg-pattern.svg);
   background-repeat: no-repeat;
@@ -268,8 +268,10 @@ body {
       position: relative;
 
       cursor: pointer;
-      &:hover {
-        background: $soft-cyan;
+      @media (min-width: 768px) {
+        &:hover {
+          background: $soft-cyan;
+        }
       }
 
       input {
