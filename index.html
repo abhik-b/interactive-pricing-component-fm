@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <section role="heading" class="heading">
+    <section role="banner" class="heading">
       <h1>Simple, traffic-based pricing</h1>
       <p>Sign-up for our 30-day trial. <span>No credit card required.</span></p>
     </section>
@@ -42,9 +42,10 @@
               max="100"
               value="50"
               step="10"
+              aria-label="slider"
             />
-            <div class="slider-fill"></div>
-            <div class="slider-handle"></div>
+            <span class="slider-fill"></span>
+            <span class="slider-handle"></span>
           </label>
         </div>
 
@@ -57,7 +58,11 @@
       <div class="toggle">
         <span class="billing-type1">Monthly Billing</span>
         <label for="billing-type-checkbox" class="toggle-btn">
-          <input type="checkbox" id="billing-type-checkbox" />
+          <input
+            type="checkbox"
+            id="billing-type-checkbox"
+            aria-label="toggle-button"
+          />
           <span class="toggle-slider"></span>
         </label>
         <span class="billing-type2"
