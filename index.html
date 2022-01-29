@@ -3,18 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
-    <title>Frontend Mentor | Interactive pricing component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.min.css" />
+    <title>Abhik B | Interactive pricing component</title>
     <style>
       .attribution {
         font-size: 11px;
@@ -25,19 +21,75 @@
       }
     </style>
   </head>
+
   <body>
-    Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-    required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-    Unlimited websites 100% data ownership Email reports Start my trial
+    <section class="heading">
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. <span>No credit card required.</span></p>
+    </section>
+
+    <section class="pricing-component">
+      <div class="top">
+        <p class="pageviews-title">100K Pageviews</p>
+
+        <div class="slider-container">
+          <div class="slider">
+            <input
+              id="slider-input"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              step="10"
+            />
+            <div class="slider-fill"></div>
+            <div class="slider-handle"></div>
+          </div>
+        </div>
+
+        <p class="price">
+          <span class="price-value">$16.00</span>
+          <span class="price-type">/ month</span>
+        </p>
+      </div>
+
+      <div class="toggle">
+        <span class="billing-type1">Monthly Billing</span>
+        <label class="toggle-btn">
+          <input type="checkbox" id="billing-type-checkbox" />
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="billing-type2"
+          >Yearly Billing
+          <span class="discount">
+            <span class="discount-minus">- 25%</span>
+            25%
+            <span class="discount-text">25% Discount</span>
+          </span>
+        </span>
+      </div>
+
+      <div class="details">
+        <ul class="features">
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+        <div class="cta-container">
+          <button class="cta">Start my trial</button>
+        </div>
+      </div>
+    </section>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by
-      <a target="_blank" href="https://www.youtube.com/c/abhikb/videos"
-        >Abhik B</a
+      <a target="_blank" href="https://www.youtube.com/c/abhikb/videos">
+        Abhik B</a
       >.
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
