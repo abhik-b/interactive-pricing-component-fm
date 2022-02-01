@@ -10,13 +10,16 @@ const billingCheckbox = document.querySelector("#billing-type-checkbox");
 let multiplier = 0.16;
 
 //
+let sliderFillArray = [0, 25, 50, 75, 100];
+let pageviewsArray = ["10K", "50K", "100K", "500K", "1M"];
+let pageviewsNumericArray = [10, 50, 100, 500, 1000];
 
 sliderInput.addEventListener("input", function () {
-  sliderHandle.style.left = sliderInput.value - 10 + "%";
-  sliderfill.style.width = sliderInput.value + "%";
-  pageViews.innerHTML = `${sliderInput.value * 2}K Pageviews`;
+  sliderHandle.style.left = sliderFillArray[sliderInput.value] - 10 + "%";
+  sliderfill.style.width = sliderFillArray[sliderInput.value] + "%";
+  pageViews.innerHTML = `${pageviewsArray[sliderInput.value]} Pageviews`;
   priceValue.innerHTML = `$${parseFloat(
-    sliderInput.value * 2 * multiplier
+    pageviewsNumericArray[sliderInput.value] * multiplier
   ).toFixed(2)}`;
 });
 
@@ -25,15 +28,15 @@ sliderInput.addEventListener("input", function () {
 billingCheckbox.addEventListener("change", function () {
   if (billingCheckbox.checked) {
     priceType.innerHTML = "/ year";
-    multiplier = 1.44;
+    multiplier = 0.16 * 12 - 0.16 * 12 * 0.25;
     priceValue.innerHTML = `$${parseFloat(
-      sliderInput.value * 2 * multiplier
+      pageviewsNumericArray[sliderInput.value] * multiplier
     ).toFixed(2)}`;
   } else {
     priceType.innerHTML = "/ month";
     multiplier = 0.16;
     priceValue.innerHTML = `$${parseFloat(
-      sliderInput.value * 2 * multiplier
+      pageviewsNumericArray[sliderInput.value] * multiplier
     ).toFixed(2)}`;
   }
 });
